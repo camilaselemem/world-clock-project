@@ -24,6 +24,17 @@ function updateTime() {
       "hh:mm:ss [<small>]A[</small>]"
     );
   }
+
+  //São Paulo
+  let spElement = document.querySelector("#sp");
+  if (spElement) {
+    let spDateElement = spElement.querySelector(".date");
+    let spTimeElement = spElement.querySelector(".time");
+    let spTime = moment().tz("America/Sao_Paulo");
+
+    spDateElement.innerHTML = spTime.format("MMMM Do YYYY");
+    spTimeElement.innerHTML = spTime.format("hh:mm:ss [<small>]A[</small>]");
+  }
 }
 
 updateTime();
